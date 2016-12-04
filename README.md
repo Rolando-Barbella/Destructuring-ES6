@@ -1,6 +1,8 @@
 # Destructuring ES6
 
-Array destructuring and object destructuring helps code be more clear and flexible, let's see some examples
+Array destructuring and object destructuring helps code be more clear and flexible, there is a lot stuff you can do in different ways, let's see some examples
+
+## Basic Uses
 
 ```javascript
 
@@ -14,7 +16,7 @@ console.log(a, b, c, d, e) // 1 2 3 4 5
 
 ```
 
-# Defautl values
+## Defautl values
 
 Default values are not only uses with functions, you can also apply destructuring with objets and arrays
 
