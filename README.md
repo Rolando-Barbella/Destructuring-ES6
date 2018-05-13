@@ -17,7 +17,7 @@ console.log(a, b, c, d, e) // 1 2 3 4 5
 ```
 ## With Objects
 
-```javascript
+```js
 
 function obj(){
   return {
@@ -42,7 +42,7 @@ console.log(m) //undefined
 
 ```
 
-## Using switch
+## A practical example using switch statement
 
 ```javascript
 
@@ -102,7 +102,7 @@ const { a: x, a: y } = { a: 5}
 
 console.log(x, y) // 5 5
 
-const { players: {name: XX, name: YY } } = { players: { name:'Mike'} }
+const { players: { name: XX, name: YY } } = { players: { name:'Mike'} }
 
 console.log( XX, YY ) // Mike, Mike
 
@@ -123,12 +123,45 @@ console.log( p === person ) // true
 
 ```
 
+## Computation
+
+You can use computed property expressions in the destructuing
+
+```js
+function bar() {
+  return {
+    a: 1,
+    b: 2,
+    c: 3,
+  }
+};
+
+const b = 'b';
+const obj = {};
+
+({ [b]: obj[b] } = bar());
+
+console.log(obj.b); // 2
+```
+### Object mapping
+
+Object mapping transformations like:
+
+```js
+const person = { name: 'Donald', age: 82, hobbie: 'Loose money on bitcoin '};
+
+const obj = {};
+
+({ name: obj.n, age: obj.a, hobbie: obj.h } = person);
+
+console.log(obj.n, obj.a, obj.h); // Donald 82 Loose money on bitcoin 
+
+```
 ## Destructuring Parameters
 
-Problaby one of the most powerfull and usefull features in ES6 is that you can pass arrays and objets as parameters to a function which will help you avoid using apply or call.
+Problaby one of the most powerfull and usefull features in ES6 is that you can pass arrays and objets as parameters to a function which avoid the need of using apply or call methods.
 
 ```javascript
-
 
 const foo = ([x, y]) => console.log(x, y)
 
@@ -136,7 +169,7 @@ foo([1,2]); // 1 2
 
 const bar = ( { a, b }) => console.log(a, b);
 
-bar( { a: 3, b: 4} ) // 3 4
+bar( { a: 3, b: 4 } ) // 3 4
 
 const z = (...x) => console.log(x)
 z([1,2,3]); // [1,2,3]
